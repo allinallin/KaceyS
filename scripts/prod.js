@@ -74,7 +74,7 @@ module.exports = function(robot) {
 
         robot.sessionMapping[user].step = 'prod-2';
 
-        res.send('Look up for the instructions in the release ticket to rollback. Come back again when you are ready to deploy.');
+        res.send('Look up for the instructions in the release ticket to rollback. Come back when you are ready to deploy.');
         delete robot.sessionMapping[user];
     });
 };
