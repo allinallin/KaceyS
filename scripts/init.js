@@ -13,7 +13,7 @@ module.exports = function(robot) {
     res.send('Ok! Are you deploying a frontend or backend service?');
   });
 
-  robot.hear(/(frontend|front-end)/i, function(res) {
+  robot.hear(/(^|\b)(frontend|front-end|fe)(\b|$)/i, function(res) {
     var user = res.message.user.name;
 
     if (robot.sessionMapping[user].step !== '1') {
@@ -29,7 +29,7 @@ module.exports = function(robot) {
     res.send('Are you deploying to production or QA?');
   });
 
-  robot.hear(/(backend|back-end)/i, function(res) {
+  robot.hear(/(^|\b)(backend|back-end|be)(\b|$)/i, function(res) {
     var user = res.message.user.name;
 
     if (robot.sessionMapping[user].step !== '1') {

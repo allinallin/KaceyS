@@ -31,10 +31,8 @@ module.exports = function(robot) {
     '\n```kcs s u Frackend ~/repos/tools/CloudFormation/templates/frackend/Frackend.template RetailQA FrackendVersion=0.2.1449```' +
     '\nThe _Rollback_ should look the same as the Release Step command but with the desired previous version:' +
     '\n````kcs s u Frackend ~/repos/tools/CloudFormation/templates/frackend/Frackend.template RetailQA FrackendVersion=0.2.1439```');
-  })
-  function databaseMigration(res) {
+  });
 
-  }
   robot.hear(/(Done|done)/i, function(res) {
     var user = res.message.user.name;
     var step = robot.sessionMapping[user].step;
