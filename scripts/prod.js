@@ -12,6 +12,9 @@ module.exports = function(robot) {
 		robot.sessionMapping[user].environment = 'prod';
 
         res.send('Cool.Before we continue, please make sure TE have signed off and to check with the doge.');
+        res.send('Udpate the retail release ticket with a snapshot.');
+        res.send('Run `kcs e s <environment> <description>`');
+        res.send('For example: `kcs e s RetailProductionUsEast "Captured snapshot of KERMIT-4044"`');
         res.send('Please click "Start Deploy" on the release ticket created.');
 
         if (robot.sessionMapping[user].service === 'backend') {
@@ -56,9 +59,6 @@ module.exports = function(robot) {
         }
 
         // Update the ticket
-        res.send('Udpate the retail release ticket with a snapshot.');
-        res.send('Run `kcs e s <environment> <description>`');
-        res.send('For example: `kcs e s RetailProductionUsEast "Captured snapshot of KERMIT-4044"`');
         res.send('Click "Release to Production" on the ticket.');
         res.send('Do not forget to test the changes manually.');
         res.send('Hurray!! You are done! Congratulations!!!!!!!!!!!!');
